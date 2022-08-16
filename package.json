@@ -1,6 +1,6 @@
 {
   "name": "allex_googlegeocodingmixinlib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AllexJS lib with mixins for any class that needs to implement Google's geocoding",
   "main": "index.js",
   "scripts": {

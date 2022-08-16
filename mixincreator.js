@@ -8,6 +8,17 @@ function createMixin (execlib, gclib) {
     this.googleGeocoder = null;
     this.googleCityGeocoder = null;
   }
+  GoogleGeocodingMixin.prototype.destroy = function () {
+    if (this.googleCityGeocoder) {
+      this.googleCityGeocoder.destroy();
+    }
+    this.googleCityGeocoder = null;
+    if (this.googleGeocoder) {
+      this.googleGeocoder.destroy();
+    }
+    this.googleGeocoder = null;
+    this.apikey = null;
+  };
   GoogleGeocodingMixin.prototype.geoCodeLatLng = function (latlngobj) {
     ensureGoogleGeocoderOn(this);
     return this.googleGeocoder.doLatLng(latlngobj);
